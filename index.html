@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulário</title>
+</head>
+<body>
+
+    <fieldset class="cadastro">
+
+        <h1>Controle de finanças</h1>
+        <br><br>
+
+        <form action="/" id="formulario" method="post">
+            <div class="form-group full-width">
+                <label for="descricao">Descrição</label>
+                <input id="descricao" type="text" name="descricao"/>
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input id="data" type="date" name="data"/>
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input id="valor" type="text" name="valor"/>
+            </div>
+
+            <div class="form-group">
+                <label for="operacao">Operação</label>
+                <select id="operacao" name="operacao">
+                    <option value=""></option>
+                    <option value="Crédito">Receita</option>
+                    <option value="Débito">Despesa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pagamento">Pagamento</label>
+                <select id="pagamento" name="pagamento">
+                    <option value=""></option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Crédito">Crédito</option>
+                    <option value="Débito">Débito</option>
+
+                </select>
+            </div>
+
+            <input type="submit" value="Registrar"/>
+        </form>
+
+    </fieldset>
+    
+</body>
+</html>
