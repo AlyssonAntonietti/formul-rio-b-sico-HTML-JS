@@ -8,11 +8,11 @@ form.addEventListener('submit', function (e) {
     const inputOperacao = e.target.querySelector('#operacao');
     const inputPagamento = e.target.querySelector('#pagamento');
 
-    const descricao = Text(inputDescricao.value);
-    const data = Date(inputData.value);
-    const valor = Number(inputValor.value);
-    const operacao = Text(inputOperacao.value);
-    const pagamento = Text(inputPagamento.value);
+    const descricao = String(inputDescricao.value);
+    const data = String(inputData.value);
+    const valor = String(inputValor.value);
+    const operacao = String(inputOperacao.value);
+    const pagamento = String(inputPagamento.value);
 
     const erroDescricao = document.getElementById('erro-nome');
     const erroData = document.getElementById('erro-data');
@@ -25,12 +25,43 @@ form.addEventListener('submit', function (e) {
     if (!descricao) {
         erroDescricao.style.display = 'block';
         formularioValido = false;
+    } else {
+        erroDescricao.style.display = 'none';
     }
 
-    if (valor.trim() === "") {
-        erroValor.style.display = 'block';
-        formularioValido = false;
-      } else {
-        erroValor.style.display = 'none';
-      }
+    if (!data) {
+      erroData.style.display = 'block';
+      formularioValido = false;
+    } else {
+      erroData.style.display = 'none';
+    }
+
+    if (!valor) {
+      erroValor.style.display = 'block';
+      formularioValido = false;
+    } else {
+      erroValor.style.display = 'none';
+    }
+
+    if (!operacao) {
+      erroOperacao.style.display = 'block';
+      formularioValido = false;
+    } else {
+      erroOperacao.style.display = 'none';
+    }
+
+    if (!pagamento) {
+      erroPagamento.style.display = 'block';
+      formularioValido = false;
+    } else {
+      erroPagamento.style.display = 'none';
+    }
+
+    if (!formularioValido) {
+      e.preventDefault()
+      console.log('chegou')
+    } else {
+      document.getElementById("formulario").reset();
+    }
+
 });

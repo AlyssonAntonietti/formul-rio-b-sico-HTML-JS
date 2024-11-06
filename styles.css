@@ -99,5 +99,7 @@ input[type="submit"]:hover {
 
 .mensagem-erro {
     color: red;
+    font-size: 12px;
     display: none; /* Esconde a mensagem inicialmente */
+    margin-top: -5px;
   }
