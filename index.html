@@ -17,16 +17,19 @@
             <div class="form-group full-width">
                 <label for="descricao">Descrição</label>
                 <input id="descricao" type="text" name="descricao"/>
+                <div id="erro-nome" class="mensagem-erro">Campo obrigatório!</div>
             </div>
 
             <div class="form-group">
                 <label for="data">Data</label>
                 <input id="data" type="date" name="data"/>
+                <div id="erro-data" class="mensagem-erro">Campo obrigatório!</div>
             </div>
 
             <div class="form-group">
                 <label for="valor">Valor</label>
                 <input id="valor" type="text" name="valor"/>
+                <div id="erro-valor" class="mensagem-erro">Campo obrigatório!</div>
             </div>
 
             <div class="form-group">
@@ -36,6 +39,7 @@
                     <option value="Crédito">Receita</option>
                     <option value="Débito">Despesa</option>
                 </select>
+                <div id="erro-operacao" class="mensagem-erro">Campo obrigatório!</div>
             </div>
 
             <div class="form-group">
@@ -46,8 +50,8 @@
                     <option value="Pix">Pix</option>
                     <option value="Crédito">Crédito</option>
                     <option value="Débito">Débito</option>
-
                 </select>
+                <div id="erro-pagamento" class="mensagem-erro">Campo obrigatório!</div>
             </div>
 
             <input type="submit" value="Registrar"/>
@@ -55,5 +59,6 @@
 
     </fieldset>
     
+    <script src="controller.js"></script>
 </body>
 </html>

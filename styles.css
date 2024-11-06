@@ -96,3 +96,8 @@ input[type="submit"]:hover {
         flex: 1 1 100%; 
     }
 }
+
+.mensagem-erro {
+    color: red;
+    display: none; /* Esconde a mensagem inicialmente */
+  }

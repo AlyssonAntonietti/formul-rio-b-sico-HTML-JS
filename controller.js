@@ -13,4 +13,24 @@ form.addEventListener('submit', function (e) {
     const valor = Number(inputValor.value);
     const operacao = Text(inputOperacao.value);
     const pagamento = Text(inputPagamento.value);
-})
+
+    const erroDescricao = document.getElementById('erro-nome');
+    const erroData = document.getElementById('erro-data');
+    const erroValor = document.getElementById('erro-valor');
+    const erroOperacao = document.getElementById('erro-operacao');
+    const erroPagamento = document.getElementById('erro-pagamento');
+
+    var formularioValido = true;
+
+    if (!descricao) {
+        erroDescricao.style.display = 'block';
+        formularioValido = false;
+    }
+
+    if (valor.trim() === "") {
+        erroValor.style.display = 'block';
+        formularioValido = false;
+      } else {
+        erroValor.style.display = 'none';
+      }
+});
