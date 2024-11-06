@@ -5,22 +5,26 @@ form.addEventListener('submit', function (e) {
     const inputDescricao = e.target.querySelector('#descricao');
     const inputData = e.target.querySelector('#data');
     const inputValor = e.target.querySelector('#valor');
-    const inputOperacao = e.target.querySelector('#operacao');
+    const inputTipo = e.target.querySelector('#tipo');
     const inputPagamento = e.target.querySelector('#pagamento');
 
     const descricao = String(inputDescricao.value);
     const data = String(inputData.value);
     const valor = String(inputValor.value);
-    const operacao = String(inputOperacao.value);
+    const tipo = String(inputTipo.value);
     const pagamento = String(inputPagamento.value);
 
     const erroDescricao = document.getElementById('erro-nome');
     const erroData = document.getElementById('erro-data');
     const erroValor = document.getElementById('erro-valor');
-    const erroOperacao = document.getElementById('erro-operacao');
+    const erroTipo = document.getElementById('erro-tipo');
     const erroPagamento = document.getElementById('erro-pagamento');
 
     var formularioValido = true;
+
+    const tabela = document.getElementById('tabela');
+    const tabelaRegistro = document.querySelector('#registros tbody');
+    const novaLinha = document.createElement('tr')
 
     if (!descricao) {
         erroDescricao.style.display = 'block';
@@ -43,11 +47,11 @@ form.addEventListener('submit', function (e) {
       erroValor.style.display = 'none';
     }
 
-    if (!operacao) {
-      erroOperacao.style.display = 'block';
+    if (!tipo) {
+      erroTipo.style.display = 'block';
       formularioValido = false;
     } else {
-      erroOperacao.style.display = 'none';
+      erroTipo.style.display = 'none';
     }
 
     if (!pagamento) {
@@ -59,9 +63,20 @@ form.addEventListener('submit', function (e) {
 
     if (!formularioValido) {
       e.preventDefault()
-      console.log('chegou')
     } else {
+
+      tabela.style.display = 'block';
+
+      [tipo, descricao, pagamento, data, valor].forEach(function(value) {
+        const novaCelula = document.createElement('td');
+        novaCelula.textContent = value;
+        novaLinha.appendChild(novaCelula);
+      });
+
+      tabelaRegistro.appendChild(novaLinha);
+
       document.getElementById("formulario").reset();
+
     }
 
 });
